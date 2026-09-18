@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\causal_cache\causal_softmax_attention.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\packed\packed_softmax_attention.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\context\context_softmax_attention.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\sliding_window\sliding_window_attention.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\kv_cache\append\kv_cache_append.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\gated_delta_net.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\replay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\fp8\fp8_attn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\nvfp4\nvfp4_attn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\q4_q5\q4_q5_attn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_conv_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_gating_proj\bf16\bf16_gdn_gating_proj_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_dispatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_dispatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_dispatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_dispatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_dispatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\nvfp4\nvfp4_linear_add_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\fp8\fp8_linear_add_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\q4\q4_linear_swiglu_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\nvfp4\nvfp4_linear_swiglu_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\fp8\fp8_linear_swiglu_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q6\q6_dispatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_dispatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\decode\sparse_moe_decode_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\prefill\sparse_moe_prefill_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\small_t\sparse_moe_small_t_plan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\linear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\add_bias.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\argmax.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\cast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\causal_conv1d_silu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\embedding.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gdn_gating.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gdn_gating_proj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gdn_input_proj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gelu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\attn_input_proj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\l2norm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\layer_norm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\linear_add.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\linear_pair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\linear_swiglu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\mtp_pack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\mtp_round.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\speculative_round.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\prepare_ragged_prefix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\prepare_masked_block.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\residual_add.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\rmsnorm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\rope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\sampling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\scalar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\scatter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\sigmoid_mul.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\silu_mul.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\sparse_moe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\target_logprobs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\vision_pos_embed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\nvfp4_sm86_stubs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\fp8_sm86_stubs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\add_bias.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\argmax.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\cast.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\causal_conv1d.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\embed_gather.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\gdn_gating.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\gelu.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\l2norm.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\layer_norm.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\mtp_pack.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\mtp_round.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\speculative_round.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\position.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\prepare_ragged_prefix.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\prepare_masked_block.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\residual_add.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\rmsnorm.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\rope.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\sampling.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\scalar.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\scatter.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\sigmoid_gate_mul.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\silu_and_mul.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\target_logprobs.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\vision_pos_embed.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\causal_cache\small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\causal_cache\prompt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\packed\launch.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\context\launch.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\sliding_window\launch.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\kv_cache\append\launch.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\recurrent.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\launch.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\prepare_wy_wu.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\state_passing.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\output.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\fp8\fp8_attn_input_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\fp8\fp8_attn_input_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\nvfp4\nvfp4_attn_input_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\nvfp4\nvfp4_attn_input_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\q4_q5\q4_q5_attn_input_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\q4_q5\q4_q5_attn_input_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_gemm_simt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_gemm_splitk.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_input_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_input_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_conv_fused.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_input_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_input_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_post.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_independent.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_conv_snapshot.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\gdn_projected_conv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_gemm_splitk.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_gating_proj\bf16\bf16_gdn_gating_proj_kernels.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_gemv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_gemv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_a16_small_t_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_a16_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_gemv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_small_t_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_rowsplit_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_rowsplit_gemm_simt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_rowsplit_gemv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_rowsplit_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_rowsplit_gemm_simt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_rowsplit_gemv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\nvfp4\nvfp4_linear_add_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\nvfp4\nvfp4_linear_add_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\fp8\fp8_linear_add_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\fp8\fp8_linear_add_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_gemm_simt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_gemv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_gemm_simt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_gemm_splitk.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\q4\q4_linear_swiglu_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\q4\q4_linear_swiglu_gemv.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\nvfp4\nvfp4_linear_swiglu_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\nvfp4\nvfp4_linear_swiglu_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\fp8\fp8_linear_swiglu_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\fp8\fp8_linear_swiglu_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_gemm_splitk.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q6\q6_rowsplit_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q6\q6_rowsplit_gemm_simt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_simt.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_small_t.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_splitk.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_decode.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_gemm_concat.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_gemm_mma.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_gemm_splitk.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\decode\sparse_moe_decode_kernels.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\prefill\sparse_moe_prefill_kernels.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\small_t\sparse_moe_small_t_kernels.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1B2BE0C5-53CB-3771-A0D0-685A504B0558}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ninfer-serve 413 문제 수정 빌드</title>
+<style>
+  body {
+    margin: 0;
+    background: #10151f;
+    color: #d9e2f0;
+    font-family: "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+    line-height: 1.65;
+  }
+  main { max-width: 840px; margin: 0 auto; padding: 36px 22px 72px; }
+  h1 { font-size: 1.65rem; margin: 0 0 8px; color: #ffffff; }
+  h2 {
+    font-size: 1.1rem;
+    margin: 34px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2a3a5c;
+    color: #8ab4ff;
+  }
+  p { margin: 8px 0; }
+  ol, ul { margin: 8px 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  code, pre { font-family: Consolas, "Cascadia Mono", Menlo, monospace; font-size: .9em; }
+  code { background: #1b2438; padding: 1px 6px; border-radius: 4px; }
+  pre {
+    background: #161f31;
+    border: 1px solid #2a3a5c;
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin: 12px 0;
+  }
+  pre code { background: none; padding: 0; }
+  footer { margin-top: 48px; color: #7c8fb0; font-size: .8rem; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ninfer-serve 413 문제 수정 빌드</h1>
+  <p>NInfer-3090 서버에서 이미지 요청이 413으로 거부되던 문제를 고쳐 다시 만든 ninfer-serve 빌드입니다.</p>
+
+  <h2>처음에 겪은 문제</h2>
+  <p>이미지를 넣어 요청을 보내면 <code>413 request_too_large</code>가 돌아왔습니다. <code>--max-request-mib</code>를 큰 값으로 올려도 달라지지 않았고, 텍스트만 있는 요청은 잘 됐습니다.</p>
+
+  <h2>왜 그랬나</h2>
+  <p>curl로 <code>-d</code>나 <code>--data-binary</code>를 쓰면 요청이 <code>Content-Type: application/x-www-form-urlencoded</code>로 보내집니다. ninfer에 포함된 cpp-httplib은 이 Content-Type의 요청에만, <code>--max-request-mib</code>와는 별개로 8KB짜리 하드 한도를 걸어뒀습니다. 서버는 Content-Type을 신경 쓰지 않고 body를 그냥 JSON으로 파싱하므로, JSON을 헤더 한 장 없이 보낸 요청이 8KB만 넘어도 413이 됐습니다.</p>
+  <p>거기에 서버가 413을 "request body exceeds the configured payload limit of N bytes"라고 출력하는데, 여기 N이 우리가 설정한 값 그대로 보여서 "옵션은 반영됐는데 왜 계속 안 되지" 싶은 상황이 됐습니다. 실제로 걸리는 한도는 8KB 고정이라 옵션과 상관이 없었습니다.</p>
+
+  <h2>어떻게 고쳤나</h2>
+  <p><code>third_party/cpp-httplib/httplib.h</code>의 <code>Server::read_content</code>에서 form-urlencoded 전용 8KB 체크 분기를 지웠습니다. 이제 요청 body는 <code>--max-request-mib</code>로 정한 한 가지 한도로만 제한되고, 기존 curl 명령을 그대로 써도 통과합니다. 8KB보다 작았던 기존 요청들은 전과 똑같이 처리됩니다.</p>
+
+  <h2>들어 있는 파일</h2>
+  <ul>
+    <li><code>ninfer-serve.exe</code> — 패치된 서버 (CUDA 13.4, MSVC 14.44로 빌드)</li>
+    <li><code>avformat-62.dll</code>, <code>avcodec-62.dll</code>, <code>avutil-60.dll</code>, <code>swscale-9.dll</code>, <code>swresample-6.dll</code> — FFmpeg 런타임</li>
+    <li><code>libcurl.dll</code>, <code>z.dll</code></li>
+  </ul>
+
+  <h2>적용 방법</h2>
+  <p>기존 실행 폴더의 <code>ninfer-serve.exe</code>와 DLL들을 이 파일들로 교체한 뒤 평소대로 서버를 띄우면 됩니다. 이미지를 보내던 요청도 그대로 보내면 됩니다.</p>
+
+  <h2>직접 다시 빌드하려면</h2>
+  <p>툴체인: VS 2022 Build Tools(MSVC C++), CUDA 12.8 이상(이 빌드는 13.4), CMake 3.28 이상, git, vcpkg.</p>
+  <pre><code>$env:PATH = "D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\bin;" + $env:PATH
+$env:CUDA_PATH = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4"
+
+cmake -S &lt;repo&gt; -B build-windows -G "Visual Studio 17 2022" -A x64 `
+  -DCMAKE_TOOLCHAIN_FILE=&lt;vcpkg&gt;\scripts\buildsystems\vcpkg.cmake `
+  -DVCPKG_TARGET_TRIPLET=x64-windows `
+  -DCMAKE_CUDA_ARCHITECTURES=86
+
+cmake --build build-windows --config Release --target ninfer-serve --parallel</code></pre>
+  <p>vcpkg는 저장소의 <code>vcpkg.json</code>(curl, ffmpeg[zlib], pkgconf)을 따르고, <code>cd &lt;repo&gt;</code>에서 <code>vcpkg install --triplet x64-windows</code>로 먼저 받아두면 됩니다.</p>
+
+  <h2>주의할 점</h2>
+  <p>이 빌드는 CUDA 13.4로 컴파일해서 기존 v0.6.0(CUDA 12.8 기반)보다 높은 NVIDIA 드라이버가 필요합니다. 서버 GPU 드라이버가 570 미만이면 CUDA 초기화에서 실패할 수 있습니다. 그런 환경이면 드라이버를 올리거나 CUDA 12.8로 재빌드하세요.</p>
+
+  <h2>아직 확인 못 한 것</h2>
+  <p>이 머신에는 모델 파일(.ninfer)과 GPU가 없어서 실제 서버에서 413이 사라지는 것까진 확인하지 못했습니다. <code>--help</code>가 정상 출력되는 것과 빌드가 되는 것까지만 확인했습니다. 실서버에서 기존 curl을 다시 보내 거부가 없어지는지가 마지막 확인입니다.</p>
+
+  <footer>ninfer-serve 413 문제 수정 빌드</footer>
+</main>
+</body>
+</html>

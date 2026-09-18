@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_media_acquire.dir\\Release\\acquire.obj",
+            "outputs": [
+                "ninfer_media_acquire.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+D:/ninfer-build/CMakeFiles/ALL_BUILD.dir
+D:/ninfer-build/CMakeFiles/ZERO_CHECK.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_core.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_artifact.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_ops.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_text.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_media_decode.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_media_acquire.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_product_prompt_input.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_product_load_progress.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_engine.dir
+D:/ninfer-build/src/CMakeFiles/ninfer_serve.dir
+D:/ninfer-build/apps/CMakeFiles/ninfer.dir
+D:/ninfer-build/apps/CMakeFiles/ninfer-serve.dir
+D:/ninfer-build/apps/CMakeFiles/ninfer-perplexity.dir

@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FF9A3D75-A998-38D5-88DA-0FCF555D3472}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ninfer</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 13.4.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\ninfer-build\apps\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ninfer.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ninfer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\ninfer-build\apps\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ninfer.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ninfer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\ninfer-build\apps\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ninfer.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ninfer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\ninfer-build\apps\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ninfer.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ninfer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\ninfer-tools\vcpkg\vcpkg.exe z-applocal --target-binary=D:/ninfer-build/apps/Debug/ninfer.exe --installed-bin-dir=D:/ninfer-build/vcpkg_installed/x64-windows/debug/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\src\Debug\ninfer_engine.lib;..\src\Debug\ninfer_product_load_progress.lib;..\src\Debug\ninfer_product_prompt_input.lib;..\src\Debug\ninfer_artifact.lib;..\src\Debug\ninfer_ops.lib;..\src\Debug\ninfer_core.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib;..\src\Debug\ninfer_text.lib;..\src\Debug\ninfer_media_decode.lib;..\vcpkg_installed\x64-windows\debug\lib\avdevice.lib;..\vcpkg_installed\x64-windows\debug\lib\avfilter.lib;..\vcpkg_installed\x64-windows\debug\lib\avformat.lib;..\vcpkg_installed\x64-windows\debug\lib\avcodec.lib;..\vcpkg_installed\x64-windows\debug\lib\swresample.lib;..\vcpkg_installed\x64-windows\debug\lib\swscale.lib;..\vcpkg_installed\x64-windows\debug\lib\avutil.lib;..\src\Debug\ninfer_media_acquire.lib;..\vcpkg_installed\x64-windows\debug\lib\libcurl-d.lib;ws2_32.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/ninfer-build/vcpkg_installed/x64-windows/lib;D:/ninfer-build/vcpkg_installed/x64-windows/lib/$(Configuration);D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib;D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib/$(Configuration);C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/ninfer-build/apps/Debug/ninfer.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/ninfer-build/apps/Debug/ninfer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT</AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\ninfer-tools\vcpkg\vcpkg.exe z-applocal --target-binary=D:/ninfer-build/apps/Release/ninfer.exe --installed-bin-dir=D:/ninfer-build/vcpkg_installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\src\Release\ninfer_engine.lib;..\src\Release\ninfer_product_load_progress.lib;..\src\Release\ninfer_product_prompt_input.lib;..\src\Release\ninfer_artifact.lib;..\src\Release\ninfer_ops.lib;..\src\Release\ninfer_core.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib;..\src\Release\ninfer_text.lib;..\src\Release\ninfer_media_decode.lib;..\vcpkg_installed\x64-windows\lib\avdevice.lib;..\vcpkg_installed\x64-windows\lib\avfilter.lib;..\vcpkg_installed\x64-windows\lib\avformat.lib;..\vcpkg_installed\x64-windows\lib\avcodec.lib;..\vcpkg_installed\x64-windows\lib\swresample.lib;..\vcpkg_installed\x64-windows\lib\swscale.lib;..\vcpkg_installed\x64-windows\lib\avutil.lib;..\src\Release\ninfer_media_acquire.lib;..\vcpkg_installed\x64-windows\lib\libcurl.lib;ws2_32.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/ninfer-build/vcpkg_installed/x64-windows/lib;D:/ninfer-build/vcpkg_installed/x64-windows/lib/$(Configuration);D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib;D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib/$(Configuration);C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/ninfer-build/apps/Release/ninfer.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/ninfer-build/apps/Release/ninfer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT</AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\ninfer-tools\vcpkg\vcpkg.exe z-applocal --target-binary=D:/ninfer-build/apps/MinSizeRel/ninfer.exe --installed-bin-dir=D:/ninfer-build/vcpkg_installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\src\MinSizeRel\ninfer_engine.lib;..\src\MinSizeRel\ninfer_product_load_progress.lib;..\src\MinSizeRel\ninfer_product_prompt_input.lib;..\src\MinSizeRel\ninfer_artifact.lib;..\src\MinSizeRel\ninfer_ops.lib;..\src\MinSizeRel\ninfer_core.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib;..\src\MinSizeRel\ninfer_text.lib;..\src\MinSizeRel\ninfer_media_decode.lib;..\vcpkg_installed\x64-windows\lib\avdevice.lib;..\vcpkg_installed\x64-windows\lib\avfilter.lib;..\vcpkg_installed\x64-windows\lib\avformat.lib;..\vcpkg_installed\x64-windows\lib\avcodec.lib;..\vcpkg_installed\x64-windows\lib\swresample.lib;..\vcpkg_installed\x64-windows\lib\swscale.lib;..\vcpkg_installed\x64-windows\lib\avutil.lib;..\src\MinSizeRel\ninfer_media_acquire.lib;..\vcpkg_installed\x64-windows\lib\libcurl.lib;ws2_32.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/ninfer-build/vcpkg_installed/x64-windows/lib;D:/ninfer-build/vcpkg_installed/x64-windows/lib/$(Configuration);D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib;D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib/$(Configuration);C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/ninfer-build/apps/MinSizeRel/ninfer.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/ninfer-build/apps/MinSizeRel/ninfer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT</AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\ninfer-tools\vcpkg\vcpkg.exe z-applocal --target-binary=D:/ninfer-build/apps/RelWithDebInfo/ninfer.exe --installed-bin-dir=D:/ninfer-build/vcpkg_installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\src\RelWithDebInfo\ninfer_engine.lib;..\src\RelWithDebInfo\ninfer_product_load_progress.lib;..\src\RelWithDebInfo\ninfer_product_prompt_input.lib;..\src\RelWithDebInfo\ninfer_artifact.lib;..\src\RelWithDebInfo\ninfer_ops.lib;..\src\RelWithDebInfo\ninfer_core.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib;..\src\RelWithDebInfo\ninfer_text.lib;..\src\RelWithDebInfo\ninfer_media_decode.lib;..\vcpkg_installed\x64-windows\lib\avdevice.lib;..\vcpkg_installed\x64-windows\lib\avfilter.lib;..\vcpkg_installed\x64-windows\lib\avformat.lib;..\vcpkg_installed\x64-windows\lib\avcodec.lib;..\vcpkg_installed\x64-windows\lib\swresample.lib;..\vcpkg_installed\x64-windows\lib\swscale.lib;..\vcpkg_installed\x64-windows\lib\avutil.lib;..\src\RelWithDebInfo\ninfer_media_acquire.lib;..\vcpkg_installed\x64-windows\lib\libcurl.lib;ws2_32.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/ninfer-build/vcpkg_installed/x64-windows/lib;D:/ninfer-build/vcpkg_installed/x64-windows/lib/$(Configuration);D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib;D:/ninfer-build/vcpkg_installed/x64-windows/debug/lib/$(Configuration);C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/ninfer-build/apps/RelWithDebInfo/ninfer.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/ninfer-build/apps/RelWithDebInfo/ninfer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT</AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lsy57\Downloads\ninfer-3090-master\apps\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\ninfer-build\apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\ninfer-build\apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\ninfer-build\apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/apps/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\ninfer-build\apps\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\apps\cli\main.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\apps\cli\options.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\ninfer-build\ZERO_CHECK.vcxproj">
+      <Project>{082257E8-82DF-3E22-A670-659D2A21EF57}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_artifact.vcxproj">
+      <Project>{AC5DBF22-9F8F-3CC7-86D3-D281AE5C815B}</Project>
+      <Name>ninfer_artifact</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_core.vcxproj">
+      <Project>{418A972C-31BD-3B72-A1DF-4112D1C80B2D}</Project>
+      <Name>ninfer_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_engine.vcxproj">
+      <Project>{4ABD41FF-8E2E-3E34-86EF-4E615A290276}</Project>
+      <Name>ninfer_engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_media_acquire.vcxproj">
+      <Project>{7625285D-DF2B-3D1E-91B0-6BE1CC22014B}</Project>
+      <Name>ninfer_media_acquire</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_media_decode.vcxproj">
+      <Project>{5AF85E2D-B901-38A7-BB58-A656D9669A56}</Project>
+      <Name>ninfer_media_decode</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_ops.vcxproj">
+      <Project>{5F7B5590-F009-3DD3-9FAA-F964D1403CF4}</Project>
+      <Name>ninfer_ops</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_product_load_progress.vcxproj">
+      <Project>{3782E212-8D17-3533-94C7-2DF650FDF456}</Project>
+      <Name>ninfer_product_load_progress</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_product_prompt_input.vcxproj">
+      <Project>{288ACFFE-8131-383C-9426-3196307D8AA6}</Project>
+      <Name>ninfer_product_prompt_input</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_text.vcxproj">
+      <Project>{ACDF683E-DF53-361E-B17F-328970055C1C}</Project>
+      <Name>ninfer_text</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 13.4.targets" />
+  </ImportGroup>
+</Project>

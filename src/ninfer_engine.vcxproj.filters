@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\registry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\contract\sampling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\chat_template.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\digest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\frontend.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\media_cache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\processor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\resources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\tokenizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\frontend\tool_call_parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\runtime\prefix_identity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\state\decoder_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\state\state_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\state\round_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\runtime\visual_scatter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\vision\bindings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6\impl\vision\control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6_27b\impl\package.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6_27b\impl\load\bindings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6_27b\impl\variant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6_35b_a3b\impl\package.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6_35b_a3b\impl\load\bindings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\targets\qwen3_6_35b_a3b\impl\variant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1B2BE0C5-53CB-3771-A0D0-685A504B0558}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

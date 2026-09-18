@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\dtype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\host_worker_pool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\gdn_replay_records.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\cyclic_kv_cache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\host_kv_arena.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\paged_kv_cache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\linear_attention_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\layout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\tensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\decode_graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\admission_policy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\context_cost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\context_cost_defaults.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\kv_capacity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\public_types.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\arena.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\device.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1B2BE0C5-53CB-3771-A0D0-685A504B0558}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

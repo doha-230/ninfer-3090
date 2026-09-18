@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{418A972C-31BD-3B72-A1DF-4112D1C80B2D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ninfer_core</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 13.4.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\ninfer-build\src\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ninfer_core.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ninfer_core</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\ninfer-build\src\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ninfer_core.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ninfer_core</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\ninfer-build\src\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ninfer_core.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ninfer_core</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\ninfer-build\src\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ninfer_core.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ninfer_core</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Debug"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob0 -Zi /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>Od</Optimization>
+      <Runtime>MDd</Runtime>
+      <RuntimeChecks>RTC1</RuntimeChecks>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler=" -Ob0 -Od /RTC1" "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MDd -Xcompiler=-Zi</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Release"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob2 /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler="-O2 -Ob2" -DNDEBUG "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MD</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="MinSizeRel"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob1 /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>O1</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler="-O1 -Ob1" -DNDEBUG "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MD</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="RelWithDebInfo"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob1 -Zi /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler=" -O2 -Ob1" -DNDEBUG "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MD -Xcompiler=-Zi</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\arena.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\device.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\dtype.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\host_worker_pool.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\gdn_replay_records.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\cyclic_kv_cache.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\host_kv_arena.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\paged_kv_cache.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\linear_attention_state.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\layout.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\tensor.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\core\decode_graph.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\admission_policy.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\context_cost.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\context_cost_defaults.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\kv_capacity.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\runtime\engine\public_types.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\ninfer-build\ZERO_CHECK.vcxproj">
+      <Project>{082257E8-82DF-3E22-A670-659D2A21EF57}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 13.4.targets" />
+  </ImportGroup>
+</Project>

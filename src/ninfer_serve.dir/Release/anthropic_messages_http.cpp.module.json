@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_serve.dir\\Release\\anthropic_messages_http.obj",
+            "outputs": [
+                "ninfer_serve.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

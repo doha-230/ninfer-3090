@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_artifact.dir\\Release\\binder.obj",
+            "outputs": [
+                "ninfer_artifact.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\http_transport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\request_validation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_chat_request.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_chat_response.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_chat_http.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_responses_request.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_responses_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_responses_response.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\anthropic_thinking_signature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\anthropic_messages_request.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\anthropic_messages_response.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\anthropic_messages_http.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_responses_store.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\translate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\console_log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\generation_service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\request_log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\http_server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\openai_responses_http.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\serve\serve_options.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1B2BE0C5-53CB-3771-A0D0-685A504B0558}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

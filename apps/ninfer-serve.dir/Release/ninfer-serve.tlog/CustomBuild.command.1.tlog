@@ -1,0 +1,10 @@
+^C:\USERS\LSY57\DOWNLOADS\NINFER-3090-MASTER\APPS\CMAKELISTS.TXT
+setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/apps/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

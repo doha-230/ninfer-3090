@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5F7B5590-F009-3DD3-9FAA-F964D1403CF4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ninfer_ops</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 13.4.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\ninfer-build\src\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ninfer_ops.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ninfer_ops</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\ninfer-build\src\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ninfer_ops.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ninfer_ops</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\ninfer-build\src\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ninfer_ops.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ninfer_ops</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\ninfer-build\src\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ninfer_ops.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ninfer_ops</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Debug"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob0 -Zi /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>Od</Optimization>
+      <Runtime>MDd</Runtime>
+      <RuntimeChecks>RTC1</RuntimeChecks>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler=" -Ob0 -Od /RTC1" "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MDd -Xcompiler=-Zi</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="Release"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob2 /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler="-O2 -Ob2" -DNDEBUG "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MD</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="MinSizeRel"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob1 /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>O1</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler="-O1 -Ob1" -DNDEBUG "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MD</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.4/include/cccl" /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;NINFER_SM8X_COMPAT=1;NOMINMAX;WIN32_LEAN_AND_MEAN;CMAKE_INTDIR="RelWithDebInfo"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++20 --generate-code=arch=compute_86,code=[compute_86,sm_86] -lineinfo -Xcompiler="/EHsc -Ob1 -Zi /Zc:preprocessor /Zc:__cplusplus"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\lsy57\Downloads\ninfer-3090-master\include;C:\Users\lsy57\Downloads\ninfer-3090-master\src;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party;C:\Users\lsy57\Downloads\ninfer-3090-master\third_party\utf8proc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\include\cccl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <CudaLink>
+      <AdditionalDependencies>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.4\lib\x64\cudart_static.lib" ;cudadevrt.lib ;cudart_static.lib </AdditionalDependencies>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets -Xcompiler=/NODEFAULTLIB:LIBCMT -Xcompiler=/NODEFAULTLIB:LIBCMT -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler=" -O2 -Ob1" -DNDEBUG "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -Xcompiler=-MD -Xcompiler=-Zi</AdditionalOptions>
+      <PerformDeviceLink>true</PerformDeviceLink>
+    </CudaLink>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/lsy57/Downloads/ninfer-3090-master/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-file D:/ninfer-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\ninfer-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\add_bias.cu">
+      <CompileOut>$(IntDir)/ops/launcher/add_bias.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\argmax.cu">
+      <CompileOut>$(IntDir)/ops/launcher/argmax.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\cast.cu">
+      <CompileOut>$(IntDir)/ops/launcher/cast.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\causal_conv1d.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\embed_gather.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\gdn_gating.cu">
+      <CompileOut>$(IntDir)/ops/launcher/gdn_gating.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\gelu.cu">
+      <CompileOut>$(IntDir)/ops/launcher/gelu.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\l2norm.cu">
+      <CompileOut>$(IntDir)/ops/launcher/l2norm.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\layer_norm.cu">
+      <CompileOut>$(IntDir)/ops/launcher/layer_norm.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\mtp_pack.cu">
+      <CompileOut>$(IntDir)/ops/launcher/mtp_pack.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\mtp_round.cu">
+      <CompileOut>$(IntDir)/ops/launcher/mtp_round.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\speculative_round.cu">
+      <CompileOut>$(IntDir)/ops/launcher/speculative_round.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\position.cu">
+      <CompileOut>$(IntDir)/ops/launcher/position.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\prepare_ragged_prefix.cu">
+      <CompileOut>$(IntDir)/ops/launcher/prepare_ragged_prefix.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\prepare_masked_block.cu">
+      <CompileOut>$(IntDir)/ops/launcher/prepare_masked_block.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\residual_add.cu">
+      <CompileOut>$(IntDir)/ops/launcher/residual_add.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\rmsnorm.cu">
+      <CompileOut>$(IntDir)/ops/launcher/rmsnorm.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\rope.cu">
+      <CompileOut>$(IntDir)/ops/launcher/rope.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\sampling.cu">
+      <CompileOut>$(IntDir)/ops/launcher/sampling.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\scalar.cu">
+      <CompileOut>$(IntDir)/ops/launcher/scalar.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\scatter.cu">
+      <CompileOut>$(IntDir)/ops/launcher/scatter.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\sigmoid_gate_mul.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\silu_and_mul.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\target_logprobs.cu">
+      <CompileOut>$(IntDir)/ops/launcher/target_logprobs.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\launcher\vision_pos_embed.cu">
+      <CompileOut>$(IntDir)/ops/launcher/vision_pos_embed.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\causal_cache\causal_softmax_attention.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\causal_cache\small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\causal_cache\prompt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\packed\packed_softmax_attention.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\packed\launch.cu">
+      <CompileOut>$(IntDir)/ops/softmax_attention/dense/packed/launch.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\context\context_softmax_attention.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\dense\context\launch.cu">
+      <CompileOut>$(IntDir)/ops/softmax_attention/dense/context/launch.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\sliding_window\sliding_window_attention.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\softmax_attention\sliding_window\launch.cu">
+      <CompileOut>$(IntDir)/ops/softmax_attention/sliding_window/launch.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\kv_cache\append\kv_cache_append.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\kv_cache\append\launch.cu">
+      <CompileOut>$(IntDir)/ops/kv_cache/append/launch.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\gated_delta_net.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\replay.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\recurrent.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\launch.cu">
+      <CompileOut>$(IntDir)/ops/linear_attention/gated_delta_net/chunked/launch.cu.obj</CompileOut>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\prepare_wy_wu.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\state_passing.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_attention\gated_delta_net\chunked\output.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\bf16\bf16_attn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\fp8\fp8_attn_input_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\fp8\fp8_attn_input_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\fp8\fp8_attn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\nvfp4\nvfp4_attn_input_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\nvfp4\nvfp4_attn_input_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\nvfp4\nvfp4_attn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\q4_q5\q4_q5_attn_input_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\q4_q5\q4_q5_attn_input_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\q4_q5\q4_q5_attn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_gemm_simt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_gemm_splitk.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\attn_input_proj\w8\w8_attn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_input_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_input_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_conv_fused.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\fp8\fp8_gdn_conv_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_input_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_input_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_post.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\nvfp4\nvfp4_gdn_snapshot_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_independent.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_conv_snapshot.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\q4_q5\q4_q5_gdn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\gdn_projected_conv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_gemm_splitk.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_input_proj\w8\w8_gdn_input_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_gating_proj\bf16\bf16_gdn_gating_proj_kernels.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\gdn_gating_proj\bf16\bf16_gdn_gating_proj_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_gemv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\bf16\bf16_dispatch.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_format.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_gemv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_a16_small_t_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_a16_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\fp8\fp8_dispatch.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_format.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_gemv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\nvfp4\nvfp4_dispatch.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_small_t_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_rowsplit_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_rowsplit_gemm_simt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_rowsplit_gemv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q4\q4_dispatch.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_dispatch.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_rowsplit_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_rowsplit_gemm_simt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q5\q5_rowsplit_gemv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\bf16\bf16_linear_add_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\nvfp4\nvfp4_linear_add_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\nvfp4\nvfp4_linear_add_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\nvfp4\nvfp4_linear_add_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\fp8\fp8_linear_add_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\fp8\fp8_linear_add_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\fp8\fp8_linear_add_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_gemm_simt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_gemv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\q5\q5_linear_add_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_gemm_simt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_gemm_splitk.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_add\w8\w8_linear_add_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\q4\q4_linear_swiglu_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\q4\q4_linear_swiglu_gemv.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\q4\q4_linear_swiglu_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\nvfp4\nvfp4_linear_swiglu_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\nvfp4\nvfp4_linear_swiglu_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\nvfp4\nvfp4_linear_swiglu_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\fp8\fp8_linear_swiglu_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\fp8\fp8_linear_swiglu_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\fp8\fp8_linear_swiglu_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_gemm_splitk.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_swiglu\w8\w8_linear_swiglu_plan.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q6\q6_dispatch.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q6\q6_rowsplit_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\q6\q6_rowsplit_gemm_simt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_simt.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_small_t.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_rowsplit_gemm_splitk.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\w8\w8_dispatch.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_decode.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_gemm_concat.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_gemm_mma.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_gemm_splitk.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear_pair\w8\w8_pair_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\decode\sparse_moe_decode_kernels.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\decode\sparse_moe_decode_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\prefill\sparse_moe_prefill_kernels.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\prefill\sparse_moe_prefill_plan.cpp" />
+    <CudaCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\small_t\sparse_moe_small_t_kernels.cu">
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceForModuleDependencies>
+      <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
+    </CudaCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\sparse_moe\small_t\sparse_moe_small_t_plan.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\linear\linear.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\add_bias.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/add_bias.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\argmax.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/argmax.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\cast.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/cast.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\causal_conv1d_silu.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\embedding.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gdn_gating.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/gdn_gating.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gdn_gating_proj.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gdn_input_proj.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\gelu.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/gelu.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\attn_input_proj.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\l2norm.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/l2norm.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\layer_norm.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/layer_norm.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\linear_add.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\linear_pair.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\linear_swiglu.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\mtp_pack.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/mtp_pack.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\mtp_round.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/mtp_round.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\speculative_round.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/speculative_round.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\position.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/position.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\prepare_ragged_prefix.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/prepare_ragged_prefix.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\prepare_masked_block.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/prepare_masked_block.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\residual_add.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/residual_add.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\rmsnorm.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/rmsnorm.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\rope.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/rope.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\sampling.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/sampling.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\scalar.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/scalar.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\scatter.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/scatter.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\sigmoid_mul.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\silu_mul.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\sparse_moe.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\target_logprobs.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/target_logprobs.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\wrapper\vision_pos_embed.cpp">
+      <ObjectFileName>$(IntDir)/ops/wrapper/vision_pos_embed.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\nvfp4_sm86_stubs.cpp" />
+    <ClCompile Include="C:\Users\lsy57\Downloads\ninfer-3090-master\src\ops\fp8_sm86_stubs.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\ninfer-build\ZERO_CHECK.vcxproj">
+      <Project>{082257E8-82DF-3E22-A670-659D2A21EF57}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\ninfer-build\src\ninfer_core.vcxproj">
+      <Project>{418A972C-31BD-3B72-A1DF-4112D1C80B2D}</Project>
+      <Name>ninfer_core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 13.4.targets" />
+  </ImportGroup>
+</Project>

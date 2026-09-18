@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_core.dir\\Release\\kv_capacity.obj",
+            "outputs": [
+                "ninfer_core.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_serve.dir\\Release\\http_transport.obj",
+            "outputs": [
+                "ninfer_serve.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

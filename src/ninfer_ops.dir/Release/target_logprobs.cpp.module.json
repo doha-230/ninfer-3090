@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_ops.dir\\Release\\/ops/wrapper/target_logprobs.cpp.obj",
+            "outputs": [
+                "ninfer_ops.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

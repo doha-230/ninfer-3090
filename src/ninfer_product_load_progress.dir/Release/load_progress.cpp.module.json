@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_product_load_progress.dir\\Release\\load_progress.obj",
+            "outputs": [
+                "ninfer_product_load_progress.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

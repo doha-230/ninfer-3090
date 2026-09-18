@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_text.dir\\Release\\unicode.obj",
+            "outputs": [
+                "ninfer_text.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

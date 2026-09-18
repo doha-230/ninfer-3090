@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_engine.dir\\Release\\media_cache.obj",
+            "outputs": [
+                "ninfer_engine.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_engine.dir\\Release\\prefix_identity.obj",
+            "outputs": [
+                "ninfer_engine.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

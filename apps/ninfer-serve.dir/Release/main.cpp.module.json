@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer-serve.dir\\Release\\main.obj",
+            "outputs": [
+                "ninfer-serve.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}

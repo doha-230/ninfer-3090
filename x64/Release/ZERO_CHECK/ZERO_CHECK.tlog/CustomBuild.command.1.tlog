@@ -1,0 +1,10 @@
+^D:\NINFER-BUILD\CMAKEFILES\42387A943E7E28C88D08265D12F90618\GENERATE.STAMP.RULE
+setlocal
+D:\ninfer-tools\cmake-3.31.6-windows-x86_64\bin\cmake.exe -SC:/Users/lsy57/Downloads/ninfer-3090-master -BD:/ninfer-build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/ninfer-build/ninfer.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "ninfer_media_decode.dir\\Release\\decode.obj",
+            "outputs": [
+                "ninfer_media_decode.dir\\Release\\"
+            ],
+            "requires": []
+        }
+    ]
+}
