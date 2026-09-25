@@ -1,0 +1,74 @@
+name: build-and-release-windows
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v0.6.2-3090-patched-windows)'
+        required: true
+        type: string
+
+jobs:
+  build-windows:
+    runs-on: windows-2022
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install CUDA 12.8 (choco)
+        shell: pwsh
+        run: |
+          choco install cuda --version=12.8.1.572 -y --no-progress
+          # choco scripts put cuBLAS in a separate package
+          choco install cublas --version=12.8.1.1 -y --no-progress 2>$null || $true
+
+      - name: Install vcpkg
+        shell: pwsh
+        run: |
+          git clone https://github.com/microsoft/vcpkg C:\vcpkg --depth 1
+          C:\vcpkg\bootstrap-vcpkg.bat -disableMetrics
+
+      - name: Build (Visual Studio 2022, x64, sm_86)
+        shell: pwsh
+        env:
+          CUDA_PATH: 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
+        run: |
+          $env:PATH = "$env:CUDA_PATH\bin;$env:PATH"
+          nvcc --version
+
+          cmake -S . -B build-windows -G 'Visual Studio 17 2022' -A x64 `
+            -DCMAKE_TOOLCHAIN_FILE='C:\vcpkg\scripts\buildsystems\vcpkg.cmake' `
+            -DVCPKG_TARGET_TRIPLET=x64-windows `
+            -DCMAKE_CUDA_ARCHITECTURES=86 `
+            -DNINFER_BUILD_APPS=ON `
+            -DBUILD_TESTING=OFF `
+            -DNINFER_BUILD_BENCHMARKS=OFF
+
+          cmake --build build-windows --config Release --parallel
+
+      - name: Collect binaries
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist
+          Copy-Item build-windows\apps\Release\ninfer.exe dist\ 2>$null
+          Copy-Item build-windows\apps\Release\ninfer-serve.exe dist\ 2>$null
+          Copy-Item build-windows\apps\Release\ninfer_bench.exe dist\ 2>$null
+          Get-ChildItem build-windows -Recurse -Filter '*.dll' | ForEach-Object {
+            Copy-Item $_.FullName dist\ 2>$null
+          }
+          Get-ChildItem dist | Select-Object Name, Length
+
+      - name: Create Release
+        if: success()
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ inputs.tag }}
+          artifacts: "dist/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generateReleaseNotes: true
