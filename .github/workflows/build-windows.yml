@@ -41,11 +41,14 @@ jobs:
 
       - name: Build (Visual Studio 2022, x64, sm_86)
         shell: pwsh
-        env:
-          CUDA_PATH: 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
         run: |
-          $env:PATH = "$env:CUDA_PATH\bin;$env:PATH"
-          nvcc --version
+          $cudaPath = 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
+          # Force env vars for CMake/MSBuild CUDA detection
+          [Environment]::SetEnvironmentVariable('CUDA_PATH', $cudaPath, 'Process')
+          [Environment]::SetEnvironmentVariable('CUDA_PATH_V12_8', $cudaPath, 'Process')
+          [Environment]::SetEnvironmentVariable('CUDA_HOME', $cudaPath, 'Process')
+          $env:PATH = "$cudaPath\bin;$env:PATH"
+          nvcc --version | Select-Object -First 3
 
           cmake -S . -B build-windows -G 'Visual Studio 17 2022' -A x64 `
             -DCMAKE_TOOLCHAIN_FILE='C:\vcpkg\scripts\buildsystems\vcpkg.cmake' `
