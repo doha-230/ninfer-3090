@@ -118,8 +118,14 @@ struct RenderedChat {
     std::vector<ByteSpan> literal_spans;
     std::vector<MediaPlaceholderByteSpec> media_placeholders;
     std::vector<MediaTokenRunByteSpec> media_token_runs;
-    std::vector<RewriteCheckpointByteSpec> rewrite_checkpoints;
-    bool starts_in_reasoning = false;
+    std::optional<RewriteCheckpointByteSpec> rewrite_checkpoint;
+    std::vector<std::size_t> rewrite_execution_boundaries;
+    // Index n is the exact byte frontier after serializing the first n input messages. A missing
+    // value means the template has no independent boundary there (for example, before a leading
+    // instruction message folded into the system preamble).
+    std::vector<std::optional<std::size_t>> message_boundaries;
+    // One rendered byte boundary per requested cache marker.
+    std::vector<std::optional<std::size_t>> cache_boundaries;
 };
 
 // instruction message folded into the system preamble).
