@@ -1,4 +1,5 @@
 #include "targets/qwen3_6/impl/frontend/chat_template.h"
+#include <nlohmann/json.hpp>
 
 #include "targets/qwen3_6/impl/frontend/digest.h"
 
@@ -400,7 +401,8 @@ RenderedFragment ChatMessage::rendered_content(bool add_vision_id, int* image_co
     return std::move(out).release();
 }
 
-CompiledChatTemplate CompiledChatTemplate::resolve(std::string_view source) {
+CompiledChatTemplate CompiledChatTemplate::resolve(std::string_view source,
+                                                                    std::string_view source_name) {
     const Sha256Digest digest = sha256(source);
     if (digest == kThinkingToggleTemplateDigest) {
         return CompiledChatTemplate(ChatTemplateSemantics::ThinkingToggle);
@@ -408,8 +410,10 @@ CompiledChatTemplate CompiledChatTemplate::resolve(std::string_view source) {
     if (digest == kReasoningEffortTemplateDigest) {
         return CompiledChatTemplate(ChatTemplateSemantics::ReasoningEffort);
     }
-    throw std::invalid_argument("unsupported frontend/chat_template.jinja (sha256 " +
-                                sha256_hex(digest) + ")");
+    // Unknown template: parse as custom Jinja template (backported llama-jinja engine)
+    auto jinja = std::make_shared<const text::JinjaTemplate>(
+        std::string(source), std::string(source_name));
+    return CompiledChatTemplate(std::move(jinja));
 }
 
 PromptCapabilities CompiledChatTemplate::capabilities() const noexcept {
@@ -424,9 +428,69 @@ PromptCapabilities CompiledChatTemplate::capabilities() const noexcept {
     return result;
 }
 
+static nlohmann::ordered_json messages_to_json(const std::vector<ChatMessage>& messages) {
+    nlohmann::ordered_json jmessages = nlohmann::ordered_json::array();
+    for (const auto& msg : messages) {
+        nlohmann::ordered_json jmsg;
+        switch (msg.role) {
+        case ChatRole::System:    jmsg["role"] = "system"; break;
+        case ChatRole::User:      jmsg["role"] = "user"; break;
+        case ChatRole::Assistant: jmsg["role"] = "assistant"; break;
+        case ChatRole::Tool:      jmsg["role"] = "tool"; break;
+        default:                  jmsg["role"] = "user"; break;
+        }
+        std::string text;
+        for (const auto& part : msg.parts) {
+            if (part.kind == ChatPartKind::Text) text += part.text;
+        }
+        jmsg["content"] = text;
+        if (!msg.tool_call_id.empty()) jmsg["tool_call_id"] = msg.tool_call_id;
+        if (!msg.tool_calls.empty()) {
+            nlohmann::ordered_json tcalls = nlohmann::ordered_json::array();
+            for (const auto& tc : msg.tool_calls) {
+                nlohmann::ordered_json tcj;
+                tcj["id"] = tc.id;
+                tcj["type"] = "function";
+                tcj["function"]["name"] = tc.name;
+                tcj["function"]["arguments"] = tc.arguments_json;
+                tcalls.push_back(std::move(tcj));
+            }
+            jmsg["tool_calls"] = std::move(tcalls);
+        }
+        jmessages.push_back(std::move(jmsg));
+    }
+    return jmessages;
+}
+
 RenderedChat CompiledChatTemplate::render(const std::vector<ChatMessage>& messages,
                                           ChatRenderOptions options) const {
     if (messages.empty()) { throw std::invalid_argument("chat messages must not be empty"); }
+
+    // Custom jinja template path
+    if (semantics_ == ChatTemplateSemantics::CustomJinja && jinja_) {
+        nlohmann::ordered_json ctx;
+        ctx["messages"] = messages_to_json(messages);
+        ctx["add_generation_prompt"] = options.add_generation_prompt;
+        ctx["tools"] = nlohmann::ordered_json::array();
+        for (const auto& tool_json : options.tool_jsons) {
+            ctx["tools"].push_back(nlohmann::ordered_json::parse(tool_json));
+        }
+        ctx["preserve_thinking"] = options.preserve_thinking.value_or(false);
+
+        text::TemplateRenderOptions ropts;
+        ropts.timestamp = std::time(nullptr);
+        auto output = jinja_->render(ctx, ropts);
+
+        RenderedChat result;
+        result.text = std::move(output.text);
+        for (const auto& span : output.literal_spans) {
+            ByteSpan bs;
+            bs.begin = span.begin;
+            bs.end = span.end;
+            result.literal_spans.push_back(bs);
+        }
+        return result;
+    }
 
     const bool effort_template = semantics_ == ChatTemplateSemantics::ReasoningEffort;
     const std::string_view reasoning_instructions =

@@ -1,12 +1,14 @@
 #pragma once
 
 #include "targets/qwen3_6/impl/frontend/tokenizer.h"
+#include "text/jinja.h"
 
 #include <ninfer/targets/qwen3_6/prepared_prompt.h>
 #include <ninfer/types.h>
 
 #include <cstddef>
 #include <cstdint>
+#include <memory>
 #include <optional>
 #include <string>
 #include <utility>
@@ -116,24 +118,22 @@ struct RenderedChat {
     std::vector<ByteSpan> literal_spans;
     std::vector<MediaPlaceholderByteSpec> media_placeholders;
     std::vector<MediaTokenRunByteSpec> media_token_runs;
-    std::optional<RewriteCheckpointByteSpec> rewrite_checkpoint;
-    std::vector<std::size_t> rewrite_execution_boundaries;
-    // Index n is the exact byte frontier after serializing the first n input messages. A missing
-    // value means the template has no independent boundary there (for example, before a leading
-    // instruction message folded into the system preamble).
-    std::vector<std::optional<std::size_t>> message_boundaries;
-    // One rendered byte boundary per requested cache marker.
-    std::vector<std::optional<std::size_t>> cache_boundaries;
+    std::vector<RewriteCheckpointByteSpec> rewrite_checkpoints;
+    bool starts_in_reasoning = false;
 };
 
+// instruction message folded into the system preamble).
+// One rendered byte boundary per requested cache marker.
 enum class ChatTemplateSemantics : std::uint8_t {
     ThinkingToggle,
     ReasoningEffort,
+    CustomJinja,
 };
 
 class CompiledChatTemplate {
 public:
-    [[nodiscard]] static CompiledChatTemplate resolve(std::string_view source);
+    [[nodiscard]] static CompiledChatTemplate resolve(std::string_view source,
+                                                      std::string_view source_name = "chat_template.jinja");
 
     [[nodiscard]] PromptCapabilities capabilities() const noexcept;
     [[nodiscard]] RenderedChat render(const std::vector<ChatMessage>& messages,
@@ -142,8 +142,11 @@ public:
 private:
     explicit CompiledChatTemplate(ChatTemplateSemantics semantics) noexcept
         : semantics_(semantics) {}
+    explicit CompiledChatTemplate(std::shared_ptr<const text::JinjaTemplate> jinja) noexcept
+        : semantics_(ChatTemplateSemantics::CustomJinja), jinja_(std::move(jinja)) {}
 
     ChatTemplateSemantics semantics_;
+    std::shared_ptr<const text::JinjaTemplate> jinja_;
 };
 
 } // namespace ninfer::targets::qwen3_6::frontend_internal

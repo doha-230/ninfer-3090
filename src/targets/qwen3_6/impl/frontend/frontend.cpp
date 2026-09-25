@@ -215,11 +215,10 @@ void validate_tokenizer_config(const FrontendResources& resources) {
         throw std::invalid_argument(
             "tokenizer_config.json.chat_template must contain the loaded chat template");
     }
-    if (tokenizer_config.at("chat_template").get_ref<const std::string&>() !=
-        resources.chat_template_jinja) {
-        throw std::invalid_argument(
-            "tokenizer_config.json.chat_template does not match frontend/chat_template.jinja");
-    }
+    // ninfer-3090: custom Jinja templates are allowed. The Jinja engine
+    // will parse any valid Jinja2 template at runtime.
+    // Skip the strict digest check; the artifact template is used by default,
+    // and overrides are loaded at serve time via --chat-template.
 }
 
 fi::CompiledChatTemplate compile_chat_template(const FrontendResources& resources) {
