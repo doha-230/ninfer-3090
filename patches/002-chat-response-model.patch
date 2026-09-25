@@ -1,0 +1,11 @@
+--- /tmp/neroued-ninfer/src/serve/openai_chat_http.cpp	2026-09-25 07:07:34.539697244 +0000
++++ /opt/data/ninfer-patch/serve/openai_chat_http.cpp	2026-09-25 07:09:35.210768547 +0000
+@@ -65,7 +65,7 @@
+         return;
+     }
+ 
+-    const OpenAIChatResponseIdentity identity = make_openai_chat_response_identity(request.model);
++    const OpenAIChatResponseIdentity identity = make_openai_chat_response_identity(public_model_id_);
+     auto lifecycle                            = begin_request(make_request_log_context(
+         req_id, "openai_chat_completions", request.generation, metadata, prepared));
+ 

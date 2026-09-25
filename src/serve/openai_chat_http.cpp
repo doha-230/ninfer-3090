@@ -65,7 +65,7 @@ void HttpServer::handle_chat_completions(const httplib::Request& req, httplib::R
         return;
     }
 
-    const OpenAIChatResponseIdentity identity = make_openai_chat_response_identity(request.model);
+    const OpenAIChatResponseIdentity identity = make_openai_chat_response_identity(public_model_id_);
     auto lifecycle                            = begin_request(make_request_log_context(
         req_id, "openai_chat_completions", request.generation, metadata, prepared));
 

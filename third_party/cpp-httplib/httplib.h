@@ -13324,14 +13324,15 @@ inline bool Server::read_content(Stream &strm, Request &req, Response &res) {
             }
             return true;
           })) {
+    // ninfer: do not apply a separate form-urlencoded body limit.
+    // The server reads JSON payloads that may exceed the default 8 KB
+    // form-urlencoded limit, and the Content-Type header does not always
+    // reflect the actual format (e.g. curl --data-binary defaults to
+    // application/x-www-form-urlencoded).  The single --max-request-mib
+    // option is the only payload limit.
     const auto &content_type = req.get_header_value("Content-Type");
     if (detail::extract_media_type(content_type) ==
         "application/x-www-form-urlencoded") {
-      if (req.body.size() > CPPHTTPLIB_FORM_URL_ENCODED_PAYLOAD_MAX_LENGTH) {
-        res.status = StatusCode::PayloadTooLarge_413; // NOTE: should be 414?
-        output_error_log(Error::ExceedMaxPayloadSize, &req);
-        return false;
-      }
       detail::parse_query_text(req.body, req.params);
     }
     return true;

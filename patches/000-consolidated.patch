@@ -1,0 +1,113 @@
+--- a/src/serve/openai_common.cpp
++++ b/serve/openai_common.cpp
+@@ -213,15 +213,11 @@
+         .count();
+ }
+ 
+-void validate_openai_model(std::string_view requested, std::string_view available) {
+-    if (requested == available) { return; }
+-    ApiError error;
+-    error.status  = 404;
+-    error.type    = "invalid_request_error";
+-    error.param   = "model";
+-    error.code    = "model_not_found";
+-    error.message = "model '" + std::string(requested) + "' not found";
+-    throw ApiException(std::move(error));
++void validate_openai_model(std::string_view /*requested*/, std::string_view /*available*/) {
++    // llama.cpp-compatible: accept any model name the client sends
++    // and respond with whatever model is currently loaded.
++    // Callers (OpenAI SDK / agents / continuation clients) can pass any
++    // model identifier without getting a 404.
+ }
+ 
+ std::string new_openai_chat_completion_id() { return chat_identifier("chatcmpl-"); }
+
+--- a/src/serve/openai_chat_http.cpp
++++ b/serve/openai_chat_http.cpp
+@@ -65,7 +65,7 @@
+         return;
+     }
+ 
+-    const OpenAIChatResponseIdentity identity = make_openai_chat_response_identity(request.model);
++    const OpenAIChatResponseIdentity identity = make_openai_chat_response_identity(public_model_id_);
+     auto lifecycle                            = begin_request(make_request_log_context(
+         req_id, "openai_chat_completions", request.generation, metadata, prepared));
+ 
+
+--- a/src/serve/openai_responses_http.cpp
++++ b/serve/openai_responses_http.cpp
+@@ -312,7 +312,7 @@
+         std::optional<BuiltOpenAIResponse> response;
+         try {
+             const OpenAIResponsesRuntimeValues runtime = runtime_values(prepared, &outcome);
+-            response.emplace(make_openai_response_object(id, created, request, runtime, outcome));
++            response.emplace(make_openai_response_object(id, created, request, runtime, outcome, public_model_id_));
+         } catch (const ApiException& exception) {
+             const ApiError error = responses_error(exception.error());
+             lifecycle->response_failure(
+
+--- a/src/serve/openai_responses_response.cpp
++++ b/serve/openai_responses_response.cpp
+@@ -69,7 +69,7 @@
+                                   : Json(nullptr)},
+         {"max_tool_calls", request.max_tool_calls ? Json(*request.max_tool_calls) : Json(nullptr)},
+         {"metadata", request.metadata},
+-        {"model", request.prompt.model},
++        {"model", model},
+         {"parallel_tool_calls", request.parallel_tool_calls},
+         {"previous_response_id", request.prompt.previous_response_id
+                                      ? Json(*request.prompt.previous_response_id)
+@@ -93,12 +93,14 @@
+ }
+ 
+ BuiltOpenAIResponse build_response(const std::string& id, std::int64_t created_at,
+-                                   const OpenAIResponsesCreateRequest& request,
+-                                   const OpenAIResponsesRuntimeValues& runtime,
+-                                   const GenerationOutcome& outcome, ItemIds ids) {
++                                    const OpenAIResponsesCreateRequest& request,
++                                    const OpenAIResponsesRuntimeValues& runtime,
++                                    const GenerationOutcome& outcome, ItemIds ids,
++                                    std::string model_override = {}) {
+     BuiltOpenAIResponse built;
+     const std::string status      = response_status(outcome.finish_reason);
+     const std::string item_status = status == "completed" ? "completed" : "incomplete";
++    const std::string& model      = model_override.empty() ? request.prompt.model : model_override;
+ 
+     if (!outcome.reasoning.empty()) {
+         if (ids.reasoning.empty()) { ids.reasoning = new_openai_response_item_id("rs"); }
+@@ -210,8 +212,9 @@
+ BuiltOpenAIResponse make_openai_response_object(const std::string& id, std::int64_t created_at,
+                                                 const OpenAIResponsesCreateRequest& request,
+                                                 const OpenAIResponsesRuntimeValues& runtime,
+-                                                const GenerationOutcome& outcome) {
+-    return build_response(id, created_at, request, runtime, outcome, {});
++                                                const GenerationOutcome& outcome,
++                                                std::string model_override = {}) {
++    return build_response(id, created_at, request, runtime, outcome, {}, std::move(model_override));
+ }
+ 
+ std::string make_openai_response_input_tokens_body(int input_tokens) {
+
+--- a/third_party/cpp-httplib/httplib.h
++++ b/third_party/cpp-httplib/httplib.h
+@@ -13324,14 +13324,15 @@
+             }
+             return true;
+           })) {
++    // ninfer: do not apply a separate form-urlencoded body limit.
++    // The server reads JSON payloads that may exceed the default 8 KB
++    // form-urlencoded limit, and the Content-Type header does not always
++    // reflect the actual format (e.g. curl --data-binary defaults to
++    // application/x-www-form-urlencoded).  The single --max-request-mib
++    // option is the only payload limit.
+     const auto &content_type = req.get_header_value("Content-Type");
+     if (detail::extract_media_type(content_type) ==
+         "application/x-www-form-urlencoded") {
+-      if (req.body.size() > CPPHTTPLIB_FORM_URL_ENCODED_PAYLOAD_MAX_LENGTH) {
+-        res.status = StatusCode::PayloadTooLarge_413; // NOTE: should be 414?
+-        output_error_log(Error::ExceedMaxPayloadSize, &req);
+-        return false;
+-      }
+       detail::parse_query_text(req.body, req.params);
+     }
+     return true;

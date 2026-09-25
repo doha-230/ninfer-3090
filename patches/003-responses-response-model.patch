@@ -1,0 +1,11 @@
+--- /tmp/neroued-ninfer/src/serve/openai_responses_http.cpp	2026-09-25 07:07:34.539697244 +0000
++++ /opt/data/ninfer-patch/serve/openai_responses_http.cpp	2026-09-25 07:11:35.402832109 +0000
+@@ -312,7 +312,7 @@
+         std::optional<BuiltOpenAIResponse> response;
+         try {
+             const OpenAIResponsesRuntimeValues runtime = runtime_values(prepared, &outcome);
+-            response.emplace(make_openai_response_object(id, created, request, runtime, outcome));
++            response.emplace(make_openai_response_object(id, created, request, runtime, outcome, public_model_id_));
+         } catch (const ApiException& exception) {
+             const ApiError error = responses_error(exception.error());
+             lifecycle->response_failure(

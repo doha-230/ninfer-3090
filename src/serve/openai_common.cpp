@@ -213,15 +213,11 @@ std::int64_t unix_time_now() {
         .count();
 }
 
-void validate_openai_model(std::string_view requested, std::string_view available) {
-    if (requested == available) { return; }
-    ApiError error;
-    error.status  = 404;
-    error.type    = "invalid_request_error";
-    error.param   = "model";
-    error.code    = "model_not_found";
-    error.message = "model '" + std::string(requested) + "' not found";
-    throw ApiException(std::move(error));
+void validate_openai_model(std::string_view /*requested*/, std::string_view /*available*/) {
+    // llama.cpp-compatible: accept any model name the client sends
+    // and respond with whatever model is currently loaded.
+    // Callers (OpenAI SDK / agents / continuation clients) can pass any
+    // model identifier without getting a 404.
 }
 
 std::string new_openai_chat_completion_id() { return chat_identifier("chatcmpl-"); }

@@ -312,7 +312,7 @@ void HttpServer::handle_responses(const httplib::Request& req, httplib::Response
         std::optional<BuiltOpenAIResponse> response;
         try {
             const OpenAIResponsesRuntimeValues runtime = runtime_values(prepared, &outcome);
-            response.emplace(make_openai_response_object(id, created, request, runtime, outcome));
+            response.emplace(make_openai_response_object(id, created, request, runtime, outcome, public_model_id_));
         } catch (const ApiException& exception) {
             const ApiError error = responses_error(exception.error());
             lifecycle->response_failure(

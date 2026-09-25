@@ -69,7 +69,7 @@ Json response_common(const std::string& id, std::int64_t created_at,
                                   : Json(nullptr)},
         {"max_tool_calls", request.max_tool_calls ? Json(*request.max_tool_calls) : Json(nullptr)},
         {"metadata", request.metadata},
-        {"model", request.prompt.model},
+        {"model", model},
         {"parallel_tool_calls", request.parallel_tool_calls},
         {"previous_response_id", request.prompt.previous_response_id
                                      ? Json(*request.prompt.previous_response_id)
@@ -93,12 +93,14 @@ bool needs_message_item(const GenerationOutcome& outcome, const std::string& sta
 }
 
 BuiltOpenAIResponse build_response(const std::string& id, std::int64_t created_at,
-                                   const OpenAIResponsesCreateRequest& request,
-                                   const OpenAIResponsesRuntimeValues& runtime,
-                                   const GenerationOutcome& outcome, ItemIds ids) {
+                                    const OpenAIResponsesCreateRequest& request,
+                                    const OpenAIResponsesRuntimeValues& runtime,
+                                    const GenerationOutcome& outcome, ItemIds ids,
+                                    std::string model_override = {}) {
     BuiltOpenAIResponse built;
     const std::string status      = response_status(outcome.finish_reason);
     const std::string item_status = status == "completed" ? "completed" : "incomplete";
+    const std::string& model      = model_override.empty() ? request.prompt.model : model_override;
 
     if (!outcome.reasoning.empty()) {
         if (ids.reasoning.empty()) { ids.reasoning = new_openai_response_item_id("rs"); }
@@ -210,8 +212,9 @@ Json in_progress_response(const std::string& id, std::int64_t created_at,
 BuiltOpenAIResponse make_openai_response_object(const std::string& id, std::int64_t created_at,
                                                 const OpenAIResponsesCreateRequest& request,
                                                 const OpenAIResponsesRuntimeValues& runtime,
-                                                const GenerationOutcome& outcome) {
-    return build_response(id, created_at, request, runtime, outcome, {});
+                                                const GenerationOutcome& outcome,
+                                                std::string model_override = {}) {
+    return build_response(id, created_at, request, runtime, outcome, {}, std::move(model_override));
 }
 
 std::string make_openai_response_input_tokens_body(int input_tokens) {
