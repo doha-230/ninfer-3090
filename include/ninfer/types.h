@@ -122,6 +122,7 @@ struct EngineOptions {
     ContextCacheOptions context_cache;
     ContextCostOptions context_cost;
     LoadProgress load_progress;
+    std::filesystem::path chat_template_path;
 };
 
 enum class SamplingMode : std::uint8_t {

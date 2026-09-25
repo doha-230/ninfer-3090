@@ -8,6 +8,7 @@
 #include <cstdint>
 #include <memory>
 #include <span>
+#include <filesystem>
 #include <vector>
 
 namespace ninfer::targets::qwen3_6 {
@@ -21,6 +22,7 @@ struct FrontendOptions {
     std::size_t media_live_bytes                = kDefaultMediaLiveBytes;
     std::uint32_t media_preprocess_threads      = 0;
     std::uint32_t max_cache_markers_per_request = 4;
+    std::filesystem::path chat_template_path;           // empty => use artifact template
 };
 
 struct FrontendResources;

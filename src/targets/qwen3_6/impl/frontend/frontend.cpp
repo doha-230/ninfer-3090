@@ -26,6 +26,8 @@
 #include <string>
 #include <string_view>
 #include <utility>
+#include <filesystem>
+#include <fstream>
 #include <vector>
 
 namespace ninfer::targets::qwen3_6 {
@@ -221,8 +223,27 @@ void validate_tokenizer_config(const FrontendResources& resources) {
     // and overrides are loaded at serve time via --chat-template.
 }
 
-fi::CompiledChatTemplate compile_chat_template(const FrontendResources& resources) {
+fi::CompiledChatTemplate compile_chat_template(const FrontendResources& resources,
+                                                       const std::filesystem::path& override_path) {
     validate_tokenizer_config(resources);
+    if (!override_path.empty()) {
+        std::ifstream file(override_path, std::ios::binary | std::ios::ate);
+        if (!file) {
+            throw std::invalid_argument("cannot read chat template: " + override_path.string());
+        }
+        const auto size = file.tellg();
+        if (size <= 0 || size > 16 * 1024 * 1024) {
+            throw std::invalid_argument(
+                "chat template must be a nonempty UTF-8 source file up to 16 MiB: " +
+                override_path.string());
+        }
+        std::string source(static_cast<std::size_t>(size), '\0');
+        file.seekg(0);
+        if (!file.read(source.data(), static_cast<std::streamsize>(source.size()))) {
+            throw std::invalid_argument("cannot read chat template: " + override_path.string());
+        }
+        return fi::CompiledChatTemplate::resolve(source, override_path.string());
+    }
     return fi::CompiledChatTemplate::resolve(resources.chat_template_jinja);
 }
 
@@ -789,7 +810,7 @@ prepare_context_cache(ContextCacheHints hints, std::size_t message_count,
 class Frontend::Impl {
 public:
     Impl(const FrontendResources& resources, bool registered_checkpoint, FrontendOptions options)
-        : chat_template(compile_chat_template(resources)),
+        : chat_template(compile_chat_template(resources, options.chat_template_path)),
           tokenizer(std::make_shared<const fi::Tokenizer>(
               fi::TokenizerResources{.tokenizer_json         = resources.tokenizer_json,
                                      .tokenizer_config_json  = resources.tokenizer_config_json,
