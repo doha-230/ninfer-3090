@@ -25,8 +25,13 @@ jobs:
         shell: pwsh
         run: |
           choco install cuda --version=12.8.1.572 -y --no-progress
-          # choco scripts put cuBLAS in a separate package
-          choco install cublas --version=12.8.1.1 -y --no-progress 2>$null || $true
+          # Verify NVCC is available (cuda package bundles the full toolkit: nvcc, cuBLAS, etc.)
+          $cudaPath = 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
+          if (-not (Test-Path "$cudaPath\bin\nvcc.exe")) {
+            Write-Error "nvcc not found at $cudaPath"
+            exit 1
+          }
+          & "$cudaPath\bin\nvcc.exe" --version | Select-Object -First 3
 
       - name: Install vcpkg
         shell: pwsh
