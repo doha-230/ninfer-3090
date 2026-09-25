@@ -1,0 +1,64 @@
+name: build-and-release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v0.6.2-3090-patched)'
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build & collect in Docker (CUDA 12.6, sm_86)
+        run: |
+          mkdir -p dist
+          docker run --rm \
+            -v $PWD:/src \
+            -v $PWD/dist:/dist \
+            nvidia/cuda:12.6.3-devel-ubuntu22.04 \
+            bash -c '
+              set -e
+              apt-get update
+              apt-get install -y --no-install-recommends \
+                cmake ninja-build pkg-config \
+                libavcodec-dev libavformat-dev libavutil-dev libswscale-dev \
+                libcurl4-openssl-dev
+
+              cmake -S /src -B /build -G Ninja \
+                -DCMAKE_BUILD_TYPE=Release \
+                -DCMAKE_CUDA_ARCHITECTURES=86 \
+                -DNINFER_BUILD_APPS=ON \
+                -DBUILD_TESTING=OFF \
+                -DNINFER_BUILD_BENCHMARKS=OFF
+
+              cmake --build /build --parallel --target ninfer ninfer-serve
+
+              cp /build/apps/ninfer /dist/ 2>/dev/null || true
+              cp /build/apps/ninfer-serve /dist/ 2>/dev/null || true
+              cp /src/README.md /dist/ 2>/dev/null || true
+              cp /src/README.ko.md /dist/ 2>/dev/null || true
+            '
+
+      - name: List dist
+        run: ls -la dist/
+
+      - name: Create Release
+        if: success()
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ inputs.tag }}
+          artifacts: "dist/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generateReleaseNotes: true
