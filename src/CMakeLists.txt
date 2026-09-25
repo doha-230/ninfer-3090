@@ -298,6 +298,12 @@ add_library(ninfer_text STATIC
 ninfer_internal_includes(ninfer_text)
 target_compile_definitions(ninfer_text PUBLIC UTF8PROC_STATIC)
 
+# JINJA chat template engine (from llama.cpp, backported from latest upstream)
+target_sources(ninfer_jinja PRIVATE text/jinja.cpp)
+ninfer_internal_includes(ninfer_jinja)
+target_include_directories(ninfer_jinja PRIVATE ${PROJECT_SOURCE_DIR}/third_party)
+target_link_libraries(ninfer_jinja PRIVATE ninfer_text)
+
 add_library(ninfer_media_decode STATIC
   media/decode/decode.cpp)
 ninfer_internal_includes(ninfer_media_decode)
@@ -370,5 +376,5 @@ if(NINFER_BUILD_SERVE)
     ${PROJECT_SOURCE_DIR}/third_party/cpp-httplib)
   target_link_libraries(ninfer_serve
     PUBLIC ninfer_engine Threads::Threads
-    PRIVATE ninfer_media_acquire ${NINFER_CUDART_TARGET})
+    PRIVATE ninfer_media_acquire ${NINFER_CUDART_TARGET} ninfer_jinja)
 endif()

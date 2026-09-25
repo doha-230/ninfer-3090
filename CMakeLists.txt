@@ -93,6 +93,7 @@ endif()
 find_package(Threads REQUIRED)
 
 # --- Subdirectories ----------------------------------------------------------
+add_subdirectory(third_party/llama-jinja EXCLUDE_FROM_ALL)
 add_subdirectory(src)
 if(NINFER_BUILD_APPS)
   add_subdirectory(apps)
