@@ -7,12 +7,17 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Release tag (e.g. v0.6.2-3090-patched-windows)'
+        description: 'Release tag (e.g. v0.7.0-sm86)'
         required: true
         type: string
 
 jobs:
-  build-windows:
+  build:
+    strategy:
+      matrix:
+        cuda:
+          - { ver: "12.8.1.572", path: "v12.8", tag_suffix: "cuda12", archive: "ninfer-sm86-cuda12.zip" }
+          - { ver: "13.3.1",      path: "v13.3", tag_suffix: "cuda13", archive: "ninfer-sm86-cuda13.zip" }
     runs-on: windows-2022
     permissions:
       contents: write
@@ -25,23 +30,22 @@ jobs:
         id: cache-vcpkg
         uses: actions/cache@v4
         with:
-          path: |
-            C:\vcpkg
+          path: C:\vcpkg
           key: vcpkg-${{ hashFiles('vcpkg.json') }}-${{ runner.os }}
 
-      - name: Cache CUDA 12.8 toolkit
+      - name: Cache CUDA ${{ matrix.cuda.path }}
         id: cache-cuda
         uses: actions/cache@v4
         with:
-          path: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8
-          key: cuda-12.8.1-${{ runner.os }}
+          path: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\${{ matrix.cuda.path }}
+          key: cuda-${{ matrix.cuda.ver }}-${{ runner.os }}
 
-      - name: Install CUDA 12.8 (choco)
+      - name: Install CUDA ${{ matrix.cuda.ver }} (choco)
         if: steps.cache-cuda.outputs.cache-hit != 'true'
         shell: pwsh
         run: |
-          choco install cuda --version=12.8.1.572 -y --no-progress
-          $cudaPath = 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
+          choco install cuda --version=${{ matrix.cuda.ver }} -y --no-progress
+          $cudaPath = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\${{ matrix.cuda.path }}"
           if (-not (Test-Path "$cudaPath\bin\nvcc.exe")) {
             Write-Error "nvcc not found at $cudaPath"
             exit 1
@@ -55,18 +59,17 @@ jobs:
           git clone https://github.com/microsoft/vcpkg C:\vcpkg --depth 1
           C:\vcpkg\bootstrap-vcpkg.bat -disableMetrics
 
-      - name: Build (Visual Studio 2022, x64, sm_86)
+      - name: Build (sm_86, ${{ matrix.cuda.path }})
         shell: pwsh
         run: |
-          $cudaPath = 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
-          # Force env vars for CMake/MSBuild CUDA detection
+          $cudaPath = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\${{ matrix.cuda.path }}"
           [Environment]::SetEnvironmentVariable('CUDA_PATH', $cudaPath, 'Process')
-          [Environment]::SetEnvironmentVariable('CUDA_PATH_V12_8', $cudaPath, 'Process')
+          # CUDA_PATH (unversioned) is sufficient; MSBuild auto-detects the toolkit
           [Environment]::SetEnvironmentVariable('CUDA_HOME', $cudaPath, 'Process')
           $env:PATH = "$cudaPath\bin;$env:PATH"
           nvcc --version | Select-Object -First 3
 
-          cmake -S . -B build-windows -G 'Visual Studio 17 2022' -A x64 `
+          cmake -S . -B "build-${{ matrix.cuda.tag_suffix }}" -G 'Visual Studio 17 2022' -A x64 `
             -DCMAKE_TOOLCHAIN_FILE='C:\vcpkg\scripts\buildsystems\vcpkg.cmake' `
             -DVCPKG_TARGET_TRIPLET=x64-windows `
             -DCMAKE_CUDA_ARCHITECTURES=86 `
@@ -74,28 +77,53 @@ jobs:
             -DBUILD_TESTING=OFF `
             -DNINFER_BUILD_BENCHMARKS=OFF
 
-          cmake --build build-windows --config Release --parallel
+          cmake --build "build-${{ matrix.cuda.tag_suffix }}" --config Release --parallel
 
-      - name: Collect binaries & create archive
+      - name: Collect & archive
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist
-          Copy-Item build-windows\apps\Release\ninfer.exe dist\ 2>$null
-          Copy-Item build-windows\apps\Release\ninfer-serve.exe dist\ 2>$null
-          Get-ChildItem build-windows -Recurse -Filter '*.dll' | ForEach-Object {
+          Copy-Item "build-${{ matrix.cuda.tag_suffix }}\apps\Release\ninfer.exe" dist\ 2>$null
+          Copy-Item "build-${{ matrix.cuda.tag_suffix }}\apps\Release\ninfer-serve.exe" dist\ 2>$null
+          Get-ChildItem "build-${{ matrix.cuda.tag_suffix }}" -Recurse -Filter '*.dll' | ForEach-Object {
             Copy-Item $_.FullName dist\ 2>$null
           }
           Copy-Item .\README.md dist\ 2>$null
-          Compress-Archive -Path dist\* -DestinationPath ninfer-sm86-windows.zip -Force
-          Get-Item ninfer-sm86-windows.zip | Select-Object Name, Length
+          Copy-Item .\README.ko.md dist\ 2>$null
+          Compress-Archive -Path dist\* -DestinationPath ${{ matrix.cuda.archive }} -Force
           Get-ChildItem dist | Select-Object Name, Length
           Write-Host "ARCHIVE_OK"
 
+      - name: Upload archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.cuda.tag_suffix }}
+          path: ${{ matrix.cuda.archive }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all archives
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Collect for release
+        run: |
+          mkdir release
+          ls -R artifacts/
+          cp artifacts/cuda12/ninfer-sm86-cuda12.zip release/ 2>/dev/null || true
+          cp artifacts/cuda13/ninfer-sm86-cuda13.zip release/ 2>/dev/null || true
+          ls -la release/
+
       - name: Create Release
-        if: success()
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ inputs.tag }}
-          artifacts: "ninfer-sm86-windows.zip"
+          artifacts: "release/*"
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
