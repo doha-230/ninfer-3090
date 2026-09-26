@@ -67,6 +67,7 @@ jobs:
           $verOnly = '${{ matrix.cuda.path }}' -replace '^v','' -replace '\.','_'
           [Environment]::SetEnvironmentVariable("CUDA_PATH_$verOnly", $cudaPath, 'Process')
           [Environment]::SetEnvironmentVariable('CUDA_HOME', $cudaPath, 'Process')
+          [Environment]::SetEnvironmentVariable('CUDAToolkit_ROOT', $cudaPath, 'Process')
           $env:PATH = "$cudaPath\bin;$env:PATH"
           nvcc --version | Select-Object -First 3
 
