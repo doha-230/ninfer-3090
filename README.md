@@ -30,6 +30,7 @@ All NVIDIA Ampere GPUs with compute capability **sm_86**:
 | GPU | VRAM | Notes |
 |-----|:----:|-------|
 | RTX 3090 / 3090 Ti | 24 GB | Primary target, fully validated |
+| RTX A6000 (Ampere) | 48 GB | ✅ Fully compatible, higher VRAM |
 | RTX 3080 / 3080 Ti | 10-12 GB | Works; smaller model configs recommended |
 | RTX 3070 / 3070 Ti | 8 GB | Limited context, use compact artifacts |
 | RTX 3060 / 3060 Ti | 8-12 GB | Limited context |
