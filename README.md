@@ -1,5 +1,7 @@
 # ninfer-sm86
 
+**CUDA 12.8+ required** | **sm_86** (RTX 3050–3090, A6000)
+
 **NInfer fork for all NVIDIA Ampere (sm_86) GPUs — RTX 3050/3060/3070/3080/3090, and professional Ampere cards.**
 
 Based on [Don-Chad/ninfer-3090](https://github.com/Don-Chad/ninfer-3090) v0.6.1, which itself is a fork of [Neroued/ninfer](https://github.com/Neroued/ninfer) (⭐2389).
@@ -79,7 +81,7 @@ cmake -S . -B build -G "Visual Studio 17 2022" -A x64 `
 cmake --build build --config Release --parallel
 ```
 
-> Requires: Visual Studio 2022, CUDA 12.8+, vcpkg
+> **Requires: Visual Studio 2022, CUDA 12.8+, vcpkg**
 
 ---
 

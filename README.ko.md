@@ -1,5 +1,7 @@
 # ninfer-sm86
 
+**CUDA 12.8+ 필요** | **sm_86** (RTX 3050–3090, A6000)
+
 **모든 NVIDIA Ampere (sm_86) GPU를 위한 NInfer 포크 — RTX 3050/3060/3070/3080/3090 및 전문가용 Ampere 카드**
 
 [Don-Chad/ninfer-3090](https://github.com/Don-Chad/ninfer-3090) v0.6.1 기반 포크 (원본: [Neroued/ninfer](https://github.com/Neroued/ninfer) ⭐2389)
@@ -79,7 +81,7 @@ cmake -S . -B build -G "Visual Studio 17 2022" -A x64 `
 cmake --build build --config Release --parallel
 ```
 
-> 필요: Visual Studio 2022, CUDA 12.8+, vcpkg
+> **필요: Visual Studio 2022, CUDA 12.8+, vcpkg**
 
 ---
 
