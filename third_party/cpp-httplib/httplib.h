@@ -6568,10 +6568,7 @@ inline bool Server::read_content(Stream &strm, Request &req, Response &res) {
           })) {
     const auto &content_type = req.get_header_value("Content-Type");
     if (!content_type.find("application/x-www-form-urlencoded")) {
-      if (req.body.size() > CPPHTTPLIB_FORM_URL_ENCODED_PAYLOAD_MAX_LENGTH) {
-        res.status = StatusCode::PayloadTooLarge_413; // NOTE: should be 414?
-        return false;
-      }
+      // Drop 8 KB form-urlencoded hard cap (PR #xxx).
       detail::parse_query_text(req.body, req.params);
     }
     return true;

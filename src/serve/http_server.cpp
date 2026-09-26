@@ -412,14 +412,9 @@ void HttpServer::handle_chat_completions(const httplib::Request& req, httplib::R
         RequestLimits limits;
         limits.default_max_tokens = options_.default_max_tokens;
         request                   = parse_chat_completion_request(body, limits);
-        if (request.model != public_model_id_) {
-            ApiError error;
-            error.status  = 404;
-            error.type    = "invalid_request_error";
-            error.code    = "model_not_found";
-            error.message = "model '" + request.model + "' not found";
-            throw ApiException(std::move(error));
-        }
+        // Accept any model name (llama.cpp compatible). The server always
+        // responds with the model that is currently loaded.
+        (void)public_model_id_;
     } catch (const ApiException& e) {
         write_error(res, e.error());
         return;
