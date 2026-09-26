@@ -41,6 +41,19 @@ All NVIDIA Ampere GPUs with compute capability **sm_86**:
 
 ---
 
+## Downloads
+
+Each release provides two archive variants:
+
+| Archive | CUDA Runtime | Best for |
+|---------|:------------:|----------|
+| `ninfer-sm86-cuda12.zip` | CUDA 12.8+ | Users with existing CUDA 12.x setup |
+| `ninfer-sm86-cuda13.zip` | CUDA 13.x | Users on newer drivers or CUDA 13.x |
+
+Both archives contain identical binaries compiled for **sm_86** (Ampere). Choose the archive whose CUDA major version matches your system. The CUDA 13 variant uses MSVC's conforming preprocessor.
+
+---
+
 ## Quick start
 
 ### Windows

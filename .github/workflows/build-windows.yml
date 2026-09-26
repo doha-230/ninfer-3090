@@ -21,11 +21,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Cache vcpkg
+        id: cache-vcpkg
+        uses: actions/cache@v4
+        with:
+          path: |
+            C:\vcpkg
+          key: vcpkg-${{ hashFiles('vcpkg.json') }}-${{ runner.os }}
+
+      - name: Cache CUDA 12.8 toolkit
+        id: cache-cuda
+        uses: actions/cache@v4
+        with:
+          path: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8
+          key: cuda-12.8.1-${{ runner.os }}
+
       - name: Install CUDA 12.8 (choco)
+        if: steps.cache-cuda.outputs.cache-hit != 'true'
         shell: pwsh
         run: |
           choco install cuda --version=12.8.1.572 -y --no-progress
-          # Verify NVCC is available (cuda package bundles the full toolkit: nvcc, cuBLAS, etc.)
           $cudaPath = 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
           if (-not (Test-Path "$cudaPath\bin\nvcc.exe")) {
             Write-Error "nvcc not found at $cudaPath"
@@ -34,6 +49,7 @@ jobs:
           & "$cudaPath\bin\nvcc.exe" --version | Select-Object -First 3
 
       - name: Install vcpkg
+        if: steps.cache-vcpkg.outputs.cache-hit != 'true'
         shell: pwsh
         run: |
           git clone https://github.com/microsoft/vcpkg C:\vcpkg --depth 1
@@ -70,8 +86,8 @@ jobs:
             Copy-Item $_.FullName dist\ 2>$null
           }
           Copy-Item .\README.md dist\ 2>$null
-          Compress-Archive -Path dist\* -DestinationPath ninfer-3090-windows.zip -Force
-          Get-Item ninfer-3090-windows.zip | Select-Object Name, Length
+          Compress-Archive -Path dist\* -DestinationPath ninfer-sm86-windows.zip -Force
+          Get-Item ninfer-sm86-windows.zip | Select-Object Name, Length
           Get-ChildItem dist | Select-Object Name, Length
           Write-Host "ARCHIVE_OK"
 
@@ -80,6 +96,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ inputs.tag }}
-          artifacts: "ninfer-3090-windows.zip"
+          artifacts: "ninfer-sm86-windows.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
