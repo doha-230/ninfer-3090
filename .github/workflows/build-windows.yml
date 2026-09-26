@@ -64,7 +64,8 @@ jobs:
         run: |
           $cudaPath = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\${{ matrix.cuda.path }}"
           [Environment]::SetEnvironmentVariable('CUDA_PATH', $cudaPath, 'Process')
-          # CUDA_PATH (unversioned) is sufficient; MSBuild auto-detects the toolkit
+          $verOnly = '${{ matrix.cuda.path }}' -replace '^v','' -replace '\.','_'
+          [Environment]::SetEnvironmentVariable("CUDA_PATH_$verOnly", $cudaPath, 'Process')
           [Environment]::SetEnvironmentVariable('CUDA_HOME', $cudaPath, 'Process')
           $env:PATH = "$cudaPath\bin;$env:PATH"
           nvcc --version | Select-Object -First 3
