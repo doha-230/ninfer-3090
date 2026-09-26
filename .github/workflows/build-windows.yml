@@ -70,7 +70,6 @@ jobs:
             Copy-Item $_.FullName dist\ 2>$null
           }
           Copy-Item .\README.md dist\ 2>$null
-          Copy-Item .\README.ko.md dist\ 2>$null
           Compress-Archive -Path dist\* -DestinationPath ninfer-3090-windows.zip -Force
           Get-Item ninfer-3090-windows.zip | Select-Object Name, Length @{N='MB';E={[math]::Round($_.Length/1MB,1)}}
           Get-ChildItem dist | Select-Object Name, Length
