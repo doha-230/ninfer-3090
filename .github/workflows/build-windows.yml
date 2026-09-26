@@ -74,6 +74,7 @@ jobs:
             -DCMAKE_TOOLCHAIN_FILE='C:\vcpkg\scripts\buildsystems\vcpkg.cmake' `
             -DVCPKG_TARGET_TRIPLET=x64-windows `
             -DCMAKE_CUDA_ARCHITECTURES=86 `
+          -DCUDAToolkit_ROOT="$cudaPath" `
             -DNINFER_BUILD_APPS=ON `
             -DBUILD_TESTING=OFF `
             -DNINFER_BUILD_BENCHMARKS=OFF
